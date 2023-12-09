@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "83544514561",
+    "project_id": "clean-air-isi-viewmodel",
+    "storage_bucket": "clean-air-isi-viewmodel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83544514561:android:78e8c63d529e060eaf6000",
+        "android_client_info": {
+          "package_name": "com.example.cleanair"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3l_0iS005HWl1SR5VV7ZLGibQsO1WiPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
