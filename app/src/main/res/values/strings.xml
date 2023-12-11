@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CleanAir</string>
+    <string name="email">johnappleseed@email.com</string>
+    <string name="password">your super secret password\n</string>
 </resources>

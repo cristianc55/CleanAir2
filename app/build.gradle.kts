@@ -8,6 +8,10 @@ android {
     namespace = "com.example.cleanair"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.cleanair"
         minSdk = 29
