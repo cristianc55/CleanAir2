@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_2"
     tools:context=".view.SignUpScreenActivity">
 
     <ImageView
@@ -54,6 +53,7 @@
         app:startIconDrawable="@drawable/user_icon">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameSignUpEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -74,6 +74,7 @@
         app:startIconDrawable="@drawable/password">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordSignUpEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />

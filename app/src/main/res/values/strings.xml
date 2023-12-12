@@ -7,4 +7,5 @@
     <string name="usernameSignUp">username</string>
     <string name="passwordSignUp">password</string>
     <string name="signUpButton">Create Account</string>
+    <string name="SignUpLoginButton">SignUp</string>
 </resources>

@@ -7,6 +7,7 @@ class UserModel(
     private val email: String = "email",
     private val password: String = "password"
 ) {
-
-    fun isEmailValid(email: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    companion object UserCompanion {
+        fun isEmailValid(email: String): Boolean = Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 }
