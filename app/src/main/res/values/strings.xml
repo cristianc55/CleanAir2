@@ -2,4 +2,9 @@
     <string name="app_name">CleanAir</string>
     <string name="email">johnappleseed@email.com</string>
     <string name="password">your super secret password\n</string>
+    <string name="loginButtonText">Login</string>
+    <string name="emailSignUp">email</string>
+    <string name="usernameSignUp">username</string>
+    <string name="passwordSignUp">password</string>
+    <string name="signUpButton">Create Account</string>
 </resources>

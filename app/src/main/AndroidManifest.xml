@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CleanAir"
         tools:targetApi="31">
         <activity
+            android:name=".SignUpScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreenActivity"
             android:exported="false" />
         <activity
