@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_3"
-    tools:context=".LoginScreenActivity">
+    tools:context=".view.LoginScreenActivity">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/appLogoLogin"

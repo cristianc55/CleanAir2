@@ -1,4 +1,4 @@
-package com.example.cleanair
+package com.example.cleanair.view
 
 import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.example.cleanair
+package com.example.cleanair.model
 
 import android.util.Patterns
 

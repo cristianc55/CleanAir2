@@ -1,10 +1,12 @@
-package com.example.cleanair
+package com.example.cleanair.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.cleanair.model.UserModel
 import com.example.cleanair.databinding.ActivityLoginScreenBinding
+import com.example.cleanair.presenter.LoginPresenter
 
 
 class LoginScreenActivity : AppCompatActivity() {

@@ -1,4 +1,6 @@
-package com.example.cleanair
+package com.example.cleanair.presenter
+
+import com.example.cleanair.view.LoginScreenActivity
 
 class LoginPresenter(private val loginActivity: LoginScreenActivity) {
     // Method to login

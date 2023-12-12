@@ -1,10 +1,11 @@
-package com.example.cleanair
+package com.example.cleanair.view
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.cleanair.R
 
 class SignUpScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
