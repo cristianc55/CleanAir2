@@ -3,6 +3,11 @@ package com.example.cleanair.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.arcgismaps.ApiKey
+import com.arcgismaps.ArcGISEnvironment
+import com.arcgismaps.mapping.ArcGISMap
+import com.arcgismaps.mapping.BasemapStyle
+import com.example.cleanair.CleanAirApplication
 import com.example.cleanair.databinding.ActivityMainBinding
 import com.example.cleanair.presenter.MainPresenter
 import com.google.firebase.auth.FirebaseAuth
@@ -25,8 +30,17 @@ class MainActivity : AppCompatActivity() {
 
         // Initialize the FirebaseAuth instance
         auth = Firebase.auth
-
         presenter = MainPresenter(this)
+
+        // authentication with an API key or named user is
+        // required to access basemaps and other location services
+        ArcGISEnvironment.apiKey = ApiKey.create(CleanAirApplication.ARCGIS_API_KEY)
+
+        lifecycle.addObserver(binding.mapView)
+
+        val map = ArcGISMap(BasemapStyle.ArcGISNavigationNight)
+
+        binding.mapView.map = map
     }
 
     public override fun onStart() {

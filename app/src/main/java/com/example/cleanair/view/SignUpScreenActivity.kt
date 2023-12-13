@@ -46,6 +46,14 @@ class SignUpScreenActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, LoginScreenActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
     fun startLoginActivity() {
         val intent = Intent(this, LoginScreenActivity::class.java)
         startActivity(intent)
