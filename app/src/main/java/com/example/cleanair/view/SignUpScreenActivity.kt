@@ -3,18 +3,12 @@ package com.example.cleanair.view
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.cleanair.R
-import com.example.cleanair.databinding.ActivityLoginScreenBinding
 import com.example.cleanair.databinding.ActivitySignUpScreenBinding
 import com.example.cleanair.presenter.SignUpPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-
 
 class SignUpScreenActivity : AppCompatActivity() {
 
@@ -32,7 +26,7 @@ class SignUpScreenActivity : AppCompatActivity() {
 
         // Initialize the FirebaseAuth instance
         auth = Firebase.auth
-        
+
         binding.signUpButton.setOnClickListener {
             val email = binding.emailSignUpEditText.text.toString()
             val username = binding.usernameSignUpEditText.text.toString()

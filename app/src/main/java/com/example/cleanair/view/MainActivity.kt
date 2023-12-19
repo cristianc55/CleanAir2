@@ -2,11 +2,13 @@ package com.example.cleanair.view
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.arcgismaps.ApiKey
 import com.arcgismaps.ArcGISEnvironment
 import com.arcgismaps.mapping.ArcGISMap
 import com.arcgismaps.mapping.BasemapStyle
+import com.arcgismaps.mapping.Viewpoint
 import com.example.cleanair.CleanAirApplication
 import com.example.cleanair.databinding.ActivityMainBinding
 import com.example.cleanair.presenter.MainPresenter
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
@@ -41,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         val map = ArcGISMap(BasemapStyle.ArcGISNavigationNight)
 
         binding.mapView.map = map
+
+        binding.mapView.map?.apply {
+            initialViewpoint = Viewpoint(29.7604, -95.3698, 1000000.0)
+        }
     }
 
     public override fun onStart() {

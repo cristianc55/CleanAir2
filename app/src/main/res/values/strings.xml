@@ -8,4 +8,8 @@
     <string name="SignUpLoginButton">SignUp</string>
     <string name="emailSignIn">email</string>
     <string name="passwordSignIn">password</string>
+    <string name="pm_2_5_layer">PM 2.5</string>
+    <string name="pollution_sources">Pollution</string>
+    <string name="national_parks_layer">Parks</string>
+    <string name="quality_of_air_layer">Air Quality</string>
 </resources>
