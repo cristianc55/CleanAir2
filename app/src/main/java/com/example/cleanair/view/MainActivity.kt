@@ -2,12 +2,15 @@ package com.example.cleanair.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import kotlinx.coroutines.*
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.arcgismaps.ApiKey
 import com.arcgismaps.ArcGISEnvironment
+import com.arcgismaps.data.Feature
 import com.arcgismaps.data.ServiceFeatureTable
 import com.arcgismaps.mapping.ArcGISMap
 import com.arcgismaps.mapping.BasemapStyle
@@ -20,6 +23,7 @@ import com.example.cleanair.presenter.MainPresenter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.resetViewpointButton.setOnClickListener {
             binding.mapView.setViewpoint(Viewpoint(29.7604, -95.3698, 1000000.0))
+            binding.mapView.map!!.operationalLayers.clear()
         }
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
@@ -64,6 +69,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.air_quality -> {
                     // Respond to navigation item 1 click
                     showToast("AirQuality")
+                    val serviceFeatureTable =
+                        ServiceFeatureTable("https://services.arcgis.com/cJ9YHowT8TU7DUyn/arcgis/rest/services/Air Now Current Monitor Data Public/FeatureServer/0")
+
+                    val featureLayer = FeatureLayer.createWithFeatureTable(serviceFeatureTable)
+
+                    binding.mapView.map!!.operationalLayers.clear()
+                    binding.mapView.map!!.operationalLayers.add(featureLayer)
                     true
                 }
 
@@ -71,12 +83,31 @@ class MainActivity : AppCompatActivity() {
                     // Respond to navigation item 2 click
                     showToast("PM_2.5")
                     val serviceFeatureTable =
-                        ServiceFeatureTable("https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/USA_PM25_1998_to_2016/FeatureServer")
+                        ServiceFeatureTable("https://services9.arcgis.com/RHVPKKiFTONKtxq3/arcgis/rest/services/Air_Quality_PM25_Latest_Results/FeatureServer/0")
                     // create a feature layer with the feature table
                     val featureLayer = FeatureLayer.createWithFeatureTable(serviceFeatureTable)
 
                     binding.mapView.map!!.operationalLayers.clear()
                     binding.mapView.map!!.operationalLayers.add(featureLayer)
+                    binding.mapView.callout
+
+                    this.lifecycleScope.launch {
+                        binding.mapView.onSingleTapConfirmed.collect {
+                            val identifyResult = binding.mapView.identifyLayers(
+                                screenCoordinate = it.screenCoordinate,
+                                tolerance = 12.0,
+                                returnPopupsOnly = true,
+                                maximumResults = 10
+                            ).onSuccess {
+
+                            }
+
+//                            identifyResult.onSuccess {result ->
+//                               print( result[0].popups)
+//                            }
+                        }
+                    }
+
                     true
                 }
 
@@ -96,6 +127,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.pollution -> {
                     // Respond to navigation item 4 click
                     showToast("Pollution")
+                    val serviceFeatureTable =
+                        ServiceFeatureTable("https://services.arcgis.com/cJ9YHowT8TU7DUyn/arcgis/rest/services/FRS_INTERESTS_NPDES_MAJOR/FeatureServer/0")
+
+                    val featureLayer = FeatureLayer.createWithFeatureTable(serviceFeatureTable)
+
+                    binding.mapView.map!!.operationalLayers.clear()
+                    binding.mapView.map!!.operationalLayers.add(featureLayer)
                     true
                 }
             }
@@ -117,7 +155,7 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    fun showToast(message: String) {
+    private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

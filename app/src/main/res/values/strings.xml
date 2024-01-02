@@ -12,4 +12,5 @@
     <string name="pollution_sources">Pollution</string>
     <string name="national_parks_layer">Parks</string>
     <string name="quality_of_air_layer">Air Quality</string>
+    <string name="searchbar_hint">new location</string>
 </resources>

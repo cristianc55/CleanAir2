@@ -17,6 +17,20 @@
         app:menu="@menu/bottom_navigation_menu" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_waypoint_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/floatingActionButtonSurfaceStyle"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toTopOf="@+id/reset_viewpoint_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/reset_viewpoint_button"
         style="?attr/floatingActionButtonSurfaceStyle"
         android:layout_width="wrap_content"
