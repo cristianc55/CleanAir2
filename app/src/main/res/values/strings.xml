@@ -13,4 +13,6 @@
     <string name="national_parks_layer">Parks</string>
     <string name="quality_of_air_layer">Air Quality</string>
     <string name="searchbar_hint">new location</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
 </resources>

@@ -20,7 +20,6 @@ class LoginPresenter(private val loginActivity: LoginScreenActivity) {
                             // Sign in success case
                             Log.d(TAG, "signInWithEmail:success")
                             //TODO save some of this info in SharedPreferences
-                            val user = auth.currentUser
                             loginActivity.startMainActivity()
                         } else {
                             // Sign in fail case
