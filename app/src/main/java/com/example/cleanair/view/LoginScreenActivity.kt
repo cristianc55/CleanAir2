@@ -33,6 +33,7 @@ class LoginScreenActivity : AppCompatActivity() {
         // Initialize the FirebaseAuth instance
         auth = Firebase.auth
 
+
         // Set the onClickListener for the login button
         binding.loginButton.setOnClickListener {
             // Get the username and password from the edit texts
